@@ -1,0 +1,11 @@
+.bars{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+.bar{
+    display: flex;
+    margin: 2px;
+    width: 10px;
+    background-color: blueviolet;
+}

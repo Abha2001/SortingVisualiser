@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './bubbleAnimations.css';
 
 class BubbleSort extends Component
 {
@@ -24,7 +25,7 @@ class BubbleSort extends Component
             <div className='bars'>
                 {array.map((value,i)=>{
                     return (
-                    <div className="bar" key={i}>{value}</div>
+                    <div className="bar" style={{height:`${value*5}px`}} key={i}></div>
                     )
                 })}
             </div>
