@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './bubbleAnimations.css';
+import BubbleSortAlgo from '../algorithms/bubbleSort';
 
 class BubbleSort extends Component
 {
@@ -8,6 +9,9 @@ class BubbleSort extends Component
     }
     componentDidMount(){
         this.generateRandom();
+    }
+    sortArray=()=>{
+        BubbleSortAlgo(this.state.array)
     }
     generateRandom=()=>{
         var arr=[]
@@ -24,6 +28,7 @@ class BubbleSort extends Component
         return(
             <>
                 <button className="newArray" onClick={this.generateRandom}>New Array</button>
+                <button className="sortArray" onClick={this.sortArray}>Sort Array</button>
                 <div className='bars'>
                     {array.map((value,i)=>{
                         return (
