@@ -22,13 +22,16 @@ class BubbleSort extends Component
         var {array}=this.state;
         // console.log(array);
         return(
-            <div className='bars'>
-                {array.map((value,i)=>{
-                    return (
-                    <div className="bar" style={{height:`${value*5}px`}} key={i}></div>
-                    )
-                })}
-            </div>
+            <>
+                <button className="newArray" onClick={this.generateRandom}>New Array</button>
+                <div className='bars'>
+                    {array.map((value,i)=>{
+                        return (
+                        <div className="bar" style={{height:`${value*5}px`}} key={i}></div>
+                        )
+                    })}
+                </div>
+            </>
         )
     }
 
