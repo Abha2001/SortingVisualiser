@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './bubbleAnimations.css';
 import BubbleSortAlgo from '../algorithms/bubbleSort';
+import SelectionSortAlgo from '../algorithms/selectionSort'
 
 class BubbleSort extends Component
 {
@@ -10,9 +11,13 @@ class BubbleSort extends Component
     componentDidMount(){
         this.generateRandom();
     }
-    sortArray=()=>{
+    bubbleSort=()=>{
         var animationsArray=BubbleSortAlgo(this.state.array);
-        console.log("hi");
+        this.startAnimations(animationsArray);
+    }
+
+    selectionSort=()=>{
+        var animationsArray=SelectionSortAlgo(this.state.array);
         this.startAnimations(animationsArray);
     }
     startAnimations(animationsArray)
@@ -23,7 +28,7 @@ class BubbleSort extends Component
             var swap = comparision[2];
             // console.log(firstElem,secondElem)
             setTimeout(()=>{
-                console.log(firstElem,secondElem)
+                // console.log(firstElem,secondElem)
                 this.changeColourCompare(firstElem,secondElem);
             },(i+0.25)*50)
             setTimeout(()=>{this.changeBackColour(firstElem,secondElem);},(i+0.5)*50)
@@ -70,7 +75,8 @@ class BubbleSort extends Component
         return(
             <>
                 <button className="newArray" onClick={this.generateRandom}>New Array</button>
-                <button className="sortArray" onClick={this.sortArray}>Sort Array</button>
+                <button className="bubbleSort" onClick={this.bubbleSort}>Bubble Sort</button>
+                <button className="selectionSort" onClick={this.selectionSort}>Selection Sort</button>
                 <div className='bars'>
                     {array.map((value,i)=>{
                         return (
